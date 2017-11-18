@@ -1,0 +1,12 @@
+<h1>all flats</h1>
+<%= link_to "Add a new flat", flats_new_path %>
+<% if (@flats.length > 0) %>
+  <% @flats.each do |flat| %>
+    <p><%= flat.name %></p>
+    <p><%= flat.address %></p>
+    <p>*************</p>
+  <% end %>
+<% else %>
+  <p>Sorry no flats available</p>
+<% end %>
+
