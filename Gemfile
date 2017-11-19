@@ -28,3 +28,10 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+gem "coffee-rails"
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
