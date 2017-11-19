@@ -1,5 +1,5 @@
 class FlatsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @flats = Flat.all
   end
@@ -15,6 +15,11 @@ class FlatsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @flat = Flat.find(params[:id])
+    @flat_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
   end
 
   private

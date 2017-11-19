@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to: "flats#index"
   get "/flats/new", to: "flats#new"
+  get "flats/:id", to: "flats#show"
   post "flats", to: "flats#create"
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
