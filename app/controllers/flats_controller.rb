@@ -6,6 +6,7 @@ class FlatsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@flats) do |flat, marker|
       marker.lat flat.latitude
       marker.lng flat.longitude
+    end
   end
 
   def new
@@ -15,7 +16,7 @@ class FlatsController < ApplicationController
   def create
     @flat = Flat.new(flat_params)
     if @flat.save
-      redirect_to flats_path
+      redirect_to root_path
     else
       render :new
     end
